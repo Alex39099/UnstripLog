@@ -1,0 +1,18 @@
+# UnstripLog by Alex_qp
+# This plugin provides the ability to unstrip stripped log or undo pathing of grass blocks.
+# Please leave a review after a while to help me improve my plugins!
+
+# Time in which stripped log / grass_path blocks can be unstripped in ticks. (Set to 0 to disable or -1 to make it always possible)
+timeframe_wood: 100
+timeframe_path: 100
+
+# Set to true if unstripping should only be possible while sneaking.
+must_sneak_unstrip: true
+
+# Set to true if stripping should only be possible while sneaking.
+must_sneak_strip: false
+
+# Options regarding the updateChecker (by mfnalex (https://github.com/JEFF-Media-GbR/Spigot-UpdateChecker))
+updatechecker:
+  enable: true
+  notify_op_on_login: true

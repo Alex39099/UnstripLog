@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>unstriplog</artifactId>
+        <groupId>me.alexqp</groupId>
+        <version>1.8.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    
+    <artifactId>unstriplog-dist</artifactId>
+    <version>${project.parent.version}</version>
+    <packaging>jar</packaging>
+
+    <build>
+        <directory>../target</directory>
+        <finalName>${project.parent.name}_v${project.version}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.2.3</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <artifactSet>
+                                <includes>
+                                    <include>me.alexqp:unstriplog-*</include>
+                                    <include>com.github.Alex39099.Commons:commons-dist</include>
+                                    <include>com.jeff_media:SpigotUpdateChecker</include>
+                                </includes>
+                            </artifactSet>
+                            <relocations>
+                                <relocation>
+                                    <pattern>com.github.alexqp.commons</pattern>
+                                    <shadedPattern>com.github.alexqp.${project.parent.name}.commons</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>com.jeff_media.updatechecker</pattern>
+                                    <shadedPattern>com.github.alexqp.${project.parent.name}.updatechecker</shadedPattern>
+                                </relocation>
+                            </relocations>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>me.alexqp</groupId>
+            <artifactId>unstriplog-core</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>me.alexqp</groupId>
+            <artifactId>unstriplog-craftbukkit_1_15_R1</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>me.alexqp</groupId>
+            <artifactId>unstriplog-craftbukkit_1_16_R3</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>me.alexqp</groupId>
+            <artifactId>unstriplog-craftbukkit_1_18_R2</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+    </dependencies>
+</project>

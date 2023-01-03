@@ -1,0 +1,25 @@
+main: com.github.alexqp.unstriplog.main.UnstripLog
+name: ${project.parent.name}
+version: ${project.parent.version}
+author: alexqp
+description: ${project.parent.description}
+api-version: "1.16"
+website: ${project.parent.url}
+
+permissions:
+  unstriplog.*:
+    description: Gives the ability to unstrip all materials.
+    default: false
+    children:
+      unstriplog.wood: true
+      unstriplog.path: true
+      unstriplog.updatechecker: true
+  unstriplog.wood:
+    description: Gives the ability to unstrip all log/wood types.
+    default: true
+  unstriplog.path:
+    description: Gives the ability to unstrip path ways.
+    default: true
+  unstriplog.updatechecker:
+    description: Get notified on login if a new update of the plugin exists.
+    default: false
