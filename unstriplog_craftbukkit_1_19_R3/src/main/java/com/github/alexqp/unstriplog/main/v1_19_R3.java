@@ -20,30 +20,7 @@ package com.github.alexqp.unstriplog.main;
 
 import org.bukkit.Material;
 
-import java.util.HashSet;
-import java.util.Set;
-
-@SuppressWarnings("WeakerAccess")
-public class InternalsProvider {
-
-    protected Material grassStrippedType;
-
-    protected Set<Material> grassOriginBlockTypeSet = new HashSet<>();
-    protected Set<Material> grassToolTypeSet = new HashSet<>();
-
-    protected Set<Material> logOriginBlockTypeSet = new HashSet<>();
-    protected Set<Material> logStrippedBlockTypeSet = new HashSet<>();
-    protected Set<Material> logToolTypeSet = new HashSet<>();
-
-    public InternalsProvider() {
-        this.createGrassOriginBlockTypeSet();
-        this.setGrassStrippedType();
-        this.createGrassToolTypeSet();
-
-        this.createLogOriginBlockTypeSet();
-        this.createLogStrippedBlockTypeSet();
-        this.createLogToolTypeSet();
-    }
+public class v1_19_R3 extends InternalsProvider {
 
     protected void setGrassStrippedType() {
         grassStrippedType = Material.DIRT_PATH;
@@ -86,9 +63,6 @@ public class InternalsProvider {
         logOriginBlockTypeSet.add(Material.CRIMSON_HYPHAE);
         logOriginBlockTypeSet.add(Material.MANGROVE_LOG);
         logOriginBlockTypeSet.add(Material.MANGROVE_WOOD);
-        logOriginBlockTypeSet.add(Material.CHERRY_LOG);
-        logOriginBlockTypeSet.add(Material.CHERRY_WOOD);
-        logOriginBlockTypeSet.add(Material.BAMBOO_BLOCK);
     }
 
     protected void createLogToolTypeSet() {
@@ -98,38 +72,5 @@ public class InternalsProvider {
         logToolTypeSet.add(Material.STONE_AXE);
         logToolTypeSet.add(Material.WOODEN_AXE);
         logToolTypeSet.add(Material.NETHERITE_AXE);
-    }
-
-    protected void createLogStrippedBlockTypeSet() {
-        for (Material mat : this.getLogOriginBlockTypeSet()) {
-            String strippedMatName = "STRIPPED_" + mat.name();
-            Material strippedMat = Material.matchMaterial(strippedMatName);
-            if (strippedMat != null)
-                logStrippedBlockTypeSet.add(strippedMat);
-        }
-    }
-
-    public Set<Material> getGrassOriginBlockTypeSet() {
-        return this.grassOriginBlockTypeSet;
-    }
-
-    public Material getGrassStrippedType() {
-        return this.grassStrippedType;
-    }
-
-    public Set<Material> getGrassToolTypeSet() {
-        return this.grassToolTypeSet;
-    }
-
-    public Set<Material> getLogOriginBlockTypeSet() {
-        return this.logOriginBlockTypeSet;
-    }
-
-    public Set<Material> getLogStrippedBlockTypeSet() {
-        return this.logStrippedBlockTypeSet;
-    }
-
-    public Set<Material> getLogToolTypeSet() {
-        return this.logToolTypeSet;
     }
 }

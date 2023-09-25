@@ -23,13 +23,14 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>me.alexqp</groupId>
     <artifactId>unstriplog</artifactId>
-    <version>1.8.0</version>
+    <version>1.9.0</version>
     <modules>
         <module>unstriplog_core</module>
         <module>unstriplog_dist</module>
         <module>unstriplog_craftbukkit_1_15_R1</module>
         <module>unstriplog_craftbukkit_1_16_R3</module>
         <module>unstriplog_craftbukkit_1_18_R2</module>
+        <module>unstriplog_craftbukkit_1_19_R3</module>
     </modules>
     <name>UnstripLog</name>
     <url>https://www.spigotmc.org/members/alex_qp.306806/</url>

@@ -45,7 +45,7 @@ public class UnstripLog extends JavaPlugin implements Debugable {
         return false;
     }
 
-    private static final String defaultInternalsVersion = "v1_19_R2";
+    private static final String defaultInternalsVersion = "v1_20_R1";
     private static InternalsProvider internals;
     static {
         try {
@@ -55,10 +55,12 @@ public class UnstripLog extends JavaPlugin implements Debugable {
                 Bukkit.getLogger().log(Level.INFO, "UnstripLog is using the latest implementation (last tested for " + defaultInternalsVersion + ").");
                 internals = new InternalsProvider();
             } else {
+                Bukkit.getLogger().log(Level.INFO, UnstripLog.class.getSimpleName() + " is using the implementation for version " + internalsName + ".");
                 internals = (InternalsProvider) Class.forName(packageName + "." + internalsName).getDeclaredConstructor().newInstance();
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | ClassCastException | NoSuchMethodException | InvocationTargetException exception) {
-            Bukkit.getLogger().log(Level.SEVERE, "UnstripLog could not find a valid implementation for this server version. Trying to use the latest implementation...");
+            Bukkit.getLogger().log(Level.WARNING, UnstripLog.class.getSimpleName() + " could not find an updated implementation for this server version. " +
+                    "However the plugin is trying to use the latest implementation which should work if Minecraft did not change drastically (last tested version: " + defaultInternalsVersion + ").");
             internals = new InternalsProvider();
         }
     }
@@ -78,6 +80,10 @@ public class UnstripLog extends JavaPlugin implements Debugable {
         internalsVersions.put("v1_18_R1", "v1_18_R2");
         internalsVersions.put("v1_18_R2", "v1_18_R2");
         // added mangrove wood
+        internalsVersions.put("v1_19_R1", "v1_19_R3");
+        internalsVersions.put("v1_19_R2", "v1_19_R3");
+        internalsVersions.put("v1_19_R3", "v1_19_R3");
+        // added bamboo, cherry wood
         return internalsVersions.getOrDefault(internalsName, defaultInternalsVersion);
     }
 
