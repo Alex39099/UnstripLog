@@ -45,7 +45,7 @@ public class UnstripLog extends JavaPlugin implements Debugable {
         return false;
     }
 
-    private static final String defaultInternalsVersion = "v1_20_R1";
+    private static final String defaultInternalsVersion = "v1_20_R3";
     private static InternalsProvider internals;
     static {
         try {
