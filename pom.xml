@@ -23,7 +23,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>me.alexqp</groupId>
     <artifactId>unstriplog</artifactId>
-    <version>1.9.0</version>
+    <version>1.10.0</version>
     <modules>
         <module>unstriplog_core</module>
         <module>unstriplog_dist</module>
