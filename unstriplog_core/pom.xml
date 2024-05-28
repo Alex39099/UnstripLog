@@ -49,13 +49,13 @@
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>1.20.2-R0.1-SNAPSHOT</version>
+            <version>1.20.6-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.github.Alex39099</groupId>
             <artifactId>Commons</artifactId>
-            <version>v1.10.2</version>
+            <version>1.11.1</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
