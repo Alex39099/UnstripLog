@@ -25,12 +25,12 @@
     <artifactId>unstriplog</artifactId>
     <version>1.10.0</version>
     <modules>
-        <module>unstriplog_core</module>
-        <module>unstriplog_dist</module>
-        <module>unstriplog_craftbukkit_1_15_R1</module>
-        <module>unstriplog_craftbukkit_1_16_R3</module>
-        <module>unstriplog_craftbukkit_1_18_R2</module>
-        <module>unstriplog_craftbukkit_1_19_R3</module>
+        <module>unstriplog-core</module>
+        <module>unstriplog-dist</module>
+        <module>unstriplog-internals_1_15_2</module>
+        <module>unstriplog-internals_1_16_5</module>
+        <module>unstriplog-internals_1_18_2</module>
+        <module>unstriplog-internals_1_19_4</module>
     </modules>
     <name>UnstripLog</name>
     <url>https://www.spigotmc.org/members/alex_qp.306806/</url>
