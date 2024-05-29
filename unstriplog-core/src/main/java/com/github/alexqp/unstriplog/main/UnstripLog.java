@@ -34,8 +34,6 @@ import com.github.alexqp.unstriplog.listeners.GrassStripListener;
 import com.github.alexqp.unstriplog.listeners.LogStripListener;
 
 import java.lang.reflect.InvocationTargetException;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.logging.Level;
 
 public class UnstripLog extends JavaPlugin implements Debugable {
